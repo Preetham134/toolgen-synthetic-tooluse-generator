@@ -1,0 +1,184 @@
+[
+  {
+    "tool_name": "travel_hotels",
+    "api_name": "hotel_search",
+    "category": "travel",
+    "description": "Search hotels by city and date",
+    "input_params": [
+      {"name": "city", "type": "string", "required": true, "description": "Destination city"},
+      {"name": "date", "type": "string", "required": false, "description": "Check-in date"}
+    ],
+    "required_params": ["city"],
+    "output_schema": {
+      "properties": {
+        "hotel_id": {"type": "string"},
+        "city": {"type": "string"},
+        "date": {"type": "string"}
+      }
+    },
+    "source_tool_id": "travel_hotels_search"
+  },
+  {
+    "tool_name": "travel_hotels",
+    "api_name": "hotel_details",
+    "category": "travel",
+    "description": "Get hotel details for a selected hotel",
+    "input_params": [
+      {"name": "hotel_id", "type": "string", "required": true, "description": "Hotel identifier"}
+    ],
+    "required_params": ["hotel_id"],
+    "output_schema": {
+      "properties": {
+        "hotel_id": {"type": "string"},
+        "status": {"type": "string"}
+      }
+    },
+    "source_tool_id": "travel_hotels_details"
+  },
+  {
+    "tool_name": "travel_hotels",
+    "api_name": "hotel_book",
+    "category": "travel",
+    "description": "Book a hotel reservation",
+    "input_params": [
+      {"name": "hotel_id", "type": "string", "required": true, "description": "Hotel identifier"},
+      {"name": "date", "type": "string", "required": false, "description": "Booking date"}
+    ],
+    "required_params": ["hotel_id"],
+    "output_schema": {
+      "properties": {
+        "booking_id": {"type": "string"},
+        "hotel_id": {"type": "string"},
+        "status": {"type": "string"}
+      }
+    },
+    "source_tool_id": "travel_hotels_book"
+  },
+  {
+    "tool_name": "travel_flights",
+    "api_name": "flight_search",
+    "category": "travel",
+    "description": "Find flights by city and date",
+    "input_params": [
+      {"name": "city", "type": "string", "required": true, "description": "Destination city"},
+      {"name": "date", "type": "string", "required": false, "description": "Departure date"}
+    ],
+    "required_params": ["city"],
+    "output_schema": {
+      "properties": {
+        "flight_id": {"type": "string"},
+        "city": {"type": "string"},
+        "date": {"type": "string"}
+      }
+    },
+    "source_tool_id": "travel_flights_search"
+  },
+  {
+    "tool_name": "travel_flights",
+    "api_name": "flight_book",
+    "category": "travel",
+    "description": "Book a selected flight",
+    "input_params": [
+      {"name": "flight_id", "type": "string", "required": true, "description": "Flight identifier"}
+    ],
+    "required_params": ["flight_id"],
+    "output_schema": {
+      "properties": {
+        "booking_id": {"type": "string"},
+        "flight_id": {"type": "string"},
+        "status": {"type": "string"}
+      }
+    },
+    "source_tool_id": "travel_flights_book"
+  },
+  {
+    "tool_name": "shopping_catalog",
+    "api_name": "product_search",
+    "category": "shopping",
+    "description": "Search for products by category and budget",
+    "input_params": [
+      {"name": "category", "type": "string", "required": true, "description": "Product category"},
+      {"name": "budget", "type": "number", "required": false, "description": "Budget limit"}
+    ],
+    "required_params": ["category"],
+    "output_schema": {
+      "properties": {
+        "product_id": {"type": "string"},
+        "category": {"type": "string"}
+      }
+    },
+    "source_tool_id": "shopping_catalog_search"
+  },
+  {
+    "tool_name": "shopping_catalog",
+    "api_name": "product_details",
+    "category": "shopping",
+    "description": "Get product details for a selected product",
+    "input_params": [
+      {"name": "product_id", "type": "string", "required": true, "description": "Product identifier"}
+    ],
+    "required_params": ["product_id"],
+    "output_schema": {
+      "properties": {
+        "product_id": {"type": "string"},
+        "status": {"type": "string"}
+      }
+    },
+    "source_tool_id": "shopping_catalog_details"
+  },
+  {
+    "tool_name": "shopping_orders",
+    "api_name": "order_create",
+    "category": "shopping",
+    "description": "Create an order for a selected product",
+    "input_params": [
+      {"name": "product_id", "type": "string", "required": true, "description": "Product identifier"}
+    ],
+    "required_params": ["product_id"],
+    "output_schema": {
+      "properties": {
+        "order_id": {"type": "string"},
+        "product_id": {"type": "string"},
+        "status": {"type": "string"}
+      }
+    },
+    "source_tool_id": "shopping_orders_create"
+  },
+  {
+    "tool_name": "food_restaurants",
+    "api_name": "restaurant_search",
+    "category": "food",
+    "description": "Search restaurant options by city",
+    "input_params": [
+      {"name": "city", "type": "string", "required": true, "description": "Dining city"},
+      {"name": "category", "type": "string", "required": false, "description": "Cuisine type"}
+    ],
+    "required_params": ["city"],
+    "output_schema": {
+      "properties": {
+        "restaurant_id": {"type": "string"},
+        "city": {"type": "string"}
+      }
+    },
+    "source_tool_id": "food_restaurants_search"
+  },
+  {
+    "tool_name": "food_restaurants",
+    "api_name": "restaurant_book",
+    "category": "food",
+    "description": "Reserve a restaurant table",
+    "input_params": [
+      {"name": "restaurant_id", "type": "string", "required": true, "description": "Restaurant identifier"},
+      {"name": "date", "type": "string", "required": false, "description": "Reservation date"}
+    ],
+    "required_params": ["restaurant_id"],
+    "output_schema": {
+      "properties": {
+        "reservation_id": {"type": "string"},
+        "restaurant_id": {"type": "string"},
+        "status": {"type": "string"}
+      }
+    },
+    "source_tool_id": "food_restaurants_book"
+  }
+]
