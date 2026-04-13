@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Test and local caches
+.pytest_cache/
+.coverage
+
+# Local temporary test workdirs
+tests/_tmp/
+
+# Virtual environments
+.venv/
+venv/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
